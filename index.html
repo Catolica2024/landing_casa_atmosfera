@@ -3,411 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Atmósfera - Estudio de Pilates y Movimiento Consciente. Bienestar integral, reeducación postural y salud.">
-    <title>Atmósfera | Estudio de Pilates y Movimiento</title>
-    <link rel="icon" type="image/png" href="iconos y logos/icono ca beige.png">
+    <title>Casa Atmósfera - Pilates & Movimiento</title>
+    <meta name="description" content="Estudio premium de Pilates y movimiento. Casa Control, Casa Energy y Casa Balance.">
+    
+    <!-- Google Fonts: Playfair Display, Tenor Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Italiana&family=Marcellus&family=Open+Sans:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Tenor+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Tenor+Sans&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header / Nav -->
-    <header class="navbar">
-        <div class="container nav-content">
-            <a href="#inicio" class="brand-logo-container">
-                <img src="iconos y logos/icono ca negro.png" alt="CA Icono" class="brand-icon">
-                <div class="brand-text">
-                    <span class="brand-name">CASA ATMÓSFERA</span>
-                    <span class="brand-sub">PILATES & MOVIMIENTO</span>
-                </div>
-            </a>
-            <nav class="nav-links">
-                <a href="#filosofia">Filosofía</a>
-                <a href="#servicios">Clases</a>
-                <a href="#beneficios">Beneficios</a>
-                <a href="#testimonios">Testimonios</a>
-                <a href="#comunidad">Comunidad</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
-            <a href="#contacto" class="btn btn-outline btn-nav-cta">Reserva clase</a>
+    <!-- 1. Preloader Minimalista -->
+    <div id="preloader">
+        <div class="loader-inner">
+            <img src="iconos y logos/logo ca negro.png" alt="Casa Atmósfera" class="loader-logo">
         </div>
-    </header>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content fade-in">
-            <div class="hero-badge">Estudio de Pilates & Movimiento</div>
-            <h1>Encuentra tu centro, <br><em>eleva tu movimiento</em></h1>
-            <p>Bienestar integral, reeducación postural y movimiento consciente para una vida plena y en equilibrio.</p>
-            <div class="hero-actions">
-                <a href="#contacto" class="btn btn-primary">Reserva tu clase de prueba</a>
-                <a href="#servicios" class="btn btn-outline-hero">Conoce nuestras clases</a>
-            </div>
+    <!-- 2. Intro Teaser Etéreo -->
+    <section id="intro-screen" class="intro-fullscreen">
+        <video class="intro-video" autoplay loop muted playsinline>
+            <source src="images/videos/presentacion2.mp4" media="(min-width: 768px)">
+            <source src="images/videos/presentacion1.mp4">
+        </video>
+        <div class="intro-overlay"></div>
+        <div class="intro-content">
+            <img src="iconos y logos/logo ca negro.png" alt="Casa Atmósfera" class="intro-logo">
+            <button id="btn-discover" class="btn-outline-intro">Descubrir</button>
         </div>
     </section>
 
-    <!-- Filosofía / Sobre Nosotros -->
-    <section class="section philosophy" id="filosofia">
-        <div class="container">
-            <div class="philosophy-grid">
-                <div class="philosophy-text fade-in">
-                    <span class="subtitle">Nuestra Filosofía</span>
-                    <h2>Más que ejercicio, una conexión profunda contigo mismo.</h2>
-                    <p>En Atmósfera, creemos que el movimiento debe ser consciente, sanador y adaptado a tu cuerpo. Nos alejamos de la intensidad extrema para enfocarnos en la calidad, la alineación y el bienestar integral.</p>
-                    <p>Nuestro espacio está diseñado para brindarte calma, atención personalizada y las herramientas necesarias para reeducar tu postura y mejorar tu calidad de vida.</p>
-                    
-                    <div class="philosophy-highlight">
-                        <img src="iconos y logos/icono ca negro.png" alt="Icono Atmósfera" class="philosophy-icon">
-                        <span>Reeducación postural & movimiento de precisión.</span>
-                    </div>
-                </div>
-                <div class="philosophy-image-wrapper fade-in delay-1">
-                    <img src="images/personal.jpg" alt="Sesión de Pilates en Atmósfera" class="philosophy-img">
-                </div>
+    <!-- 3. Selección de las 3 Casas -->
+    <div id="splash-selection" class="splash-fullscreen hidden-initially">
+        <!-- Casa Control -->
+        <div class="casa-option" data-casa="control">
+            <video class="casa-video" autoplay loop muted playsinline>
+                <source src="images/videos/casa_control.mp4">
+            </video>
+            <div class="casa-overlay"></div>
+            <div class="casa-content">
+                <span class="casa-label">Fuerza & Precisión</span>
+                <h2 class="casa-title">Casa Control</h2>
+                <p class="casa-desc">Pilates Reformer</p>
+                <button class="btn-enter">Ingresar</button>
             </div>
         </div>
-    </section>
-
-    <!-- Servicios / Clases -->
-    <section class="section services bg-light" id="servicios">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="subtitle">Nuestras Clases</span>
-                <h2>Explora nuestras modalidades</h2>
-                <p class="section-desc">Diseñadas para adaptarse a las necesidades únicas de tu cuerpo y ritmo de vida.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card fade-in delay-1">
-                    <div class="card-img-box">
-                        <img src="images/reformer.jpg" alt="Pilates Reformer">
-                    </div>
-                    <div class="card-content">
-                        <h3>Pilates Reformer</h3>
-                        <p>Fortalece, estira y alinea tu cuerpo con la resistencia fluida del reformer. Ideal para mejorar la postura y tonificar sin impacto articulaciones.</p>
-                        <a href="#contacto" class="card-link">Consultar horarios &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in delay-2">
-                    <div class="card-img-box">
-                        <img src="images/funcional.jpg" alt="Movimiento Funcional">
-                    </div>
-                    <div class="card-content">
-                        <h3>Movimiento Funcional</h3>
-                        <p>Secuencias diseñadas para recuperar la movilidad natural, ganar flexibilidad profunda y prevenir lesiones en tu vida diaria.</p>
-                        <a href="#contacto" class="card-link">Consultar horarios &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in delay-3">
-                    <div class="card-img-box">
-                        <img src="images/personal.jpg" alt="Sesiones Personalizadas">
-                    </div>
-                    <div class="card-content">
-                        <h3>Sesiones Personalizadas</h3>
-                        <p>Atención 1 a 1 adaptada a tus objetivos específicos, ideal para rehabilitación postural o metas puntuales de salud.</p>
-                        <a href="#contacto" class="card-link">Reservar sesión privada &rarr;</a>
-                    </div>
-                </div>
+        
+        <!-- Casa Energy -->
+        <div class="casa-option" data-casa="energy">
+            <video class="casa-video" autoplay loop muted playsinline>
+                <source src="images/videos/casa_energy.mp4">
+            </video>
+            <div class="casa-overlay"></div>
+            <div class="casa-content">
+                <span class="casa-label">Intensidad & Poder</span>
+                <h2 class="casa-title">Casa Energy</h2>
+                <p class="casa-desc">Athletic y Power Pilates</p>
+                <button class="btn-enter">Ingresar</button>
             </div>
         </div>
-    </section>
 
-    <!-- Beneficios -->
-    <section class="section benefits" id="beneficios">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="subtitle">Por qué elegirnos</span>
-                <h2>Beneficios del movimiento consciente</h2>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card fade-in delay-1">
-                    <div class="benefit-icon-box">
-                        <i data-feather="check-circle"></i>
-                    </div>
-                    <h4>Mejora de la postura</h4>
-                    <p>Reeduca tu alineación corporal para un porte elegante, erguido y saludable.</p>
-                </div>
-
-                <div class="benefit-card fade-in delay-2">
-                    <div class="benefit-icon-box">
-                        <i data-feather="shield"></i>
-                    </div>
-                    <h4>Alivio del dolor de espalda</h4>
-                    <p>Fortalece el core y libera tensiones profundas acumuladas en la columna.</p>
-                </div>
-
-                <div class="benefit-card fade-in delay-3">
-                    <div class="benefit-icon-box">
-                        <i data-feather="repeat"></i>
-                    </div>
-                    <h4>Mayor flexibilidad</h4>
-                    <p>Aumenta tu rango de movimiento y siente tu cuerpo más ligero y vital.</p>
-                </div>
-
-                <div class="benefit-card fade-in delay-4">
-                    <div class="benefit-icon-box">
-                        <i data-feather="sun"></i>
-                    </div>
-                    <h4>Reducción del estrés</h4>
-                    <p>Conecta la respiración ritmada con el movimiento para una calma mental duradera.</p>
-                </div>
+        <!-- Casa Balance -->
+        <div class="casa-option" data-casa="balance">
+            <video class="casa-video" autoplay loop muted playsinline>
+                <source src="images/videos/casa_balance.mp4">
+            </video>
+            <div class="casa-overlay"></div>
+            <div class="casa-content">
+                <span class="casa-label">Conexión & Calma</span>
+                <h2 class="casa-title">Casa Balance</h2>
+                <p class="casa-desc">Yoga, Pilates Mat, Barre</p>
+                <button class="btn-enter">Ingresar</button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Testimonios -->
-    <section class="section testimonials bg-light" id="testimonios">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="subtitle">Experiencias</span>
-                <h2>Lo que dicen nuestros alumnos</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in delay-1">
-                    <div class="quote-mark">“</div>
-                    <p class="quote">Desde que empecé mis clases de Pilates Reformer en Atmósfera mi dolor lumbar desapareció. El ambiente es increíblemente sereno.</p>
-                    <div class="author">
-                        <span class="name">Elena M.</span>
-                        <span class="role">Alumna Reformer</span>
-                    </div>
-                </div>
-                <div class="testimonial-card fade-in delay-2">
-                    <div class="quote-mark">“</div>
-                    <p class="quote">Un espacio verdaderamente distinto. No se siente como un gimnasio tradicional, es mi refugio semanal para reconectar conmigo misma.</p>
-                    <div class="author">
-                        <span class="name">Sofía V.</span>
-                        <span class="role">Alumna Movimiento Funcional</span>
-                    </div>
-                </div>
-                <div class="testimonial-card fade-in delay-3">
-                    <div class="quote-mark">“</div>
-                    <p class="quote">Los instructores tienen una atención al detalle espectacular. He mejorado mi flexibilidad y postura más de lo que creía posible.</p>
-                    <div class="author">
-                        <span class="name">Laura G.</span>
-                        <span class="role">Sesiones Personalizadas</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección de Redes Sociales / Comunidad -->
-    <section class="section social-community" id="comunidad">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="subtitle">Únete a nuestra comunidad</span>
-                <h2>Inspiración y movimiento diario</h2>
-                <p class="section-desc">Compártelo con nosotros en Instagram <a href="https://instagram.com" target="_blank" rel="noopener" class="highlight-link">@atmosfera.pilates</a></p>
-            </div>
-            
-            <div class="social-grid">
-                <a href="https://instagram.com" target="_blank" rel="noopener" class="social-card fade-in delay-1">
-                    <img src="images/hero.jpg" alt="Pilates Reformer Studio" loading="lazy">
-                    <div class="social-overlay">
-                        <i data-feather="instagram"></i>
-                        <span>Ver en Instagram</span>
-                    </div>
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener" class="social-card fade-in delay-2">
-                    <img src="images/reformer.jpg" alt="Movimiento Consciente" loading="lazy">
-                    <div class="social-overlay">
-                        <i data-feather="instagram"></i>
-                        <span>Ver en Instagram</span>
-                    </div>
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener" class="social-card fade-in delay-3">
-                    <img src="images/funcional.jpg" alt="Calma y Estiramiento" loading="lazy">
-                    <div class="social-overlay">
-                        <i data-feather="instagram"></i>
-                        <span>Ver en Instagram</span>
-                    </div>
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener" class="social-card fade-in delay-4">
-                    <img src="images/personal.jpg" alt="Meditación y Respiración" loading="lazy">
-                    <div class="social-overlay">
-                        <i data-feather="instagram"></i>
-                        <span>Ver en Instagram</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="social-banner fade-in">
-                <div class="social-banner-content">
-                    <img src="iconos y logos/icono ca beige.png" alt="Icono Atmósfera" class="banner-icon-img">
-                    <div>
-                        <h3>Forma parte de la experiencia Atmósfera</h3>
-                        <p>Publicamos consejos de alineación, hábitos saludables y rutinas suaves para tu día a día.</p>
-                    </div>
-                </div>
-                <div class="social-buttons">
-                    <a href="https://instagram.com" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><i data-feather="instagram" class="btn-icon"></i> Instagram</a>
-                    <a href="https://facebook.com" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><i data-feather="facebook" class="btn-icon"></i> Facebook</a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><i data-feather="youtube" class="btn-icon"></i> YouTube</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección de Contacto -->
-    <section class="section contact bg-light" id="contacto">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="subtitle">Conecta con nosotros</span>
-                <h2>Reserva tu clase o resuelve tus dudas</h2>
-                <p class="section-desc">Estamos aquí para acompañarte en tu camino hacia el bienestar integral.</p>
-            </div>
-
-            <div class="contact-grid">
-                <!-- Columna Información de contacto -->
-                <div class="contact-info-card fade-in delay-1">
-                    <h3>Visítanos en el estudio</h3>
-                    <p class="contact-lead">Un espacio diseñado para brindarte serenidad desde el primer momento.</p>
-                    
-                    <div class="info-details">
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <i data-feather="map-pin"></i>
-                            </div>
-                            <div>
-                                <h4>Dirección</h4>
-                                <p>Av. Micaela Bastidas 871, Comas 15314 (4to piso)</p>
-                            </div>
-                        </div>
-
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <i data-feather="phone"></i>
-                            </div>
-                            <div>
-                                <h4>Teléfono & WhatsApp</h4>
-                                <p><a href="tel:+51944577273">+51 944 577 273</a> / <a href="https://wa.me/51944577273" target="_blank" rel="noopener">Escribir por WhatsApp</a></p>
-                            </div>
-                        </div>
-
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <i data-feather="mail"></i>
-                            </div>
-                            <div>
-                                <h4>Correo electrónico</h4>
-                                <p><a href="mailto:casa.atmosferapilates@gmail.com">casa.atmosferapilates@gmail.com</a></p>
-                            </div>
-                        </div>
-
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <i data-feather="clock"></i>
-                            </div>
-                            <div>
-                                <h4>Horario de Atención</h4>
-                                <p>Lunes a Viernes: 08:00 - 21:00h<br>Sábados: 09:00 - 14:00h</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="quick-whatsapp-box">
-                        <i data-feather="message-circle" class="wa-icon"></i>
-                        <div>
-                            <strong>¿Prefieres atención inmediata?</strong>
-                            <p>Escríbenos directamente para consultar disponibilidad de horarios.</p>
-                            <a href="https://wa.me/51944577273" target="_blank" rel="noopener" class="link-wa">Chatear por WhatsApp &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Columna Formulario de Contacto / Reserva -->
-                <div class="contact-form-card fade-in delay-2">
-                    <h3>Envíanos un mensaje</h3>
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nombre completo *</label>
-                            <input type="text" id="name" name="name" placeholder="Ej. María García" required>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Correo electrónico *</label>
-                                <input type="email" id="email" name="email" placeholder="maria@ejemplo.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Teléfono</label>
-                                <input type="tel" id="phone" name="phone" placeholder="+51 944 577 273">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="service">Clase de interés</label>
-                            <select id="service" name="service">
-                                <option value="clase-prueba">Clase de Prueba Inicial</option>
-                                <option value="reformer">Pilates Reformer</option>
-                                <option value="funcional">Movimiento Funcional</option>
-                                <option value="personalizada">Sesión Personalizada (1 a 1)</option>
-                                <option value="dudas">Consulta general</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Mensaje o comentarios *</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Cuéntanos si tienes alguna lesión previa, objetivo postural o preferencia de horario..." required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-block">
-                            <span>Solicitar Clase de Prueba</span>
-                            <i data-feather="send" class="btn-icon"></i>
-                        </button>
-                        <div id="formFeedback" class="form-feedback"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-col">
-                <a href="#inicio" class="brand-logo-container footer-brand">
-                    <img src="iconos y logos/icono ca blanco.png" alt="CA Icono" class="brand-icon">
+    <!-- 4. Contenido Principal -->
+    <div id="main-content" class="hidden-initially">
+        
+        <!-- Navbar Glassmorphism -->
+        <header class="navbar">
+            <div class="container nav-content">
+                <a href="#" class="brand-logo-container">
+                    <img src="iconos y logos/icono ca negro.png" alt="CA Logo" class="brand-icon">
                     <div class="brand-text">
-                        <span class="brand-name">CASA ATMÓSFERA</span>
-                        <span class="brand-sub">PILATES & MOVIMIENTO</span>
+                        <span class="brand-name">Casa Atmósfera</span>
+                        <span class="brand-sub">Pilates & Movimiento</span>
                     </div>
                 </a>
-                <p>Estudio de Pilates y Movimiento Consciente. Reeducación postural, flexibilidad y calma mental.</p>
+                <nav class="nav-links">
+                    <a href="#filosofia">Filosofía</a>
+                    <a href="#casas">Las Casas</a>
+                    <a href="#comunidad">Comunidad</a>
+                    <a href="#contacto" class="btn-nav-cta">Reserva clase</a>
+                </nav>
             </div>
-            <div class="footer-col">
-                <h4>Navegación</h4>
-                <p><a href="#filosofia">Filosofía</a></p>
-                <p><a href="#servicios">Modalidades</a></p>
-                <p><a href="#beneficios">Beneficios</a></p>
-                <p><a href="#comunidad">Comunidad</a></p>
-                <p><a href="#contacto">Contacto</a></p>
-            </div>
-            <div class="footer-col">
-                <h4>Contacto</h4>
-                <p><i data-feather="map-pin" class="small-icon"></i> Av. Micaela Bastidas 871, Comas (4to piso)</p>
-                <p><i data-feather="phone" class="small-icon"></i> <a href="tel:+51944577273">+51 944 577 273</a></p>
-                <p><i data-feather="mail" class="small-icon"></i> <a href="mailto:casa.atmosferapilates@gmail.com">casa.atmosferapilates@gmail.com</a></p>
-            </div>
-            <div class="footer-col">
-                <h4>Redes Sociales</h4>
-                <p>Únete a nuestra comunidad digital:</p>
-                <div class="social-links">
-                    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i data-feather="instagram"></i></a>
-                    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i data-feather="facebook"></i></a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i data-feather="youtube"></i></a>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero fade-in">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-badge">Tu espacio de transformación</span>
+                    <h1>Eleva tu <em>cuerpo</em> y conecta con tu <em>centro</em>.</h1>
+                    <p>Una experiencia de movimiento diseñada para desafiarte, restaurarte y devolverte al equilibrio perfecto.</p>
+                    <div class="hero-actions">
+                        <a href="#casas" class="btn-primary">Ver clases</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Atmósfera Estudio de Pilates y Movimiento. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section id="filosofia" class="section bg-light">
+            <div class="container">
+                <div class="philosophy-grid fade-in delay-1">
+                    <div class="philosophy-text">
+                        <span class="label">Nuestra Filosofía</span>
+                        <h2>Más que un estudio, una <em>atmósfera</em> de bienestar.</h2>
+                        <p>Creemos en el movimiento consciente como la herramienta principal para la transformación personal. En Casa Atmósfera, cada clase está diseñada para ayudarte a construir fuerza profunda, mejorar tu flexibilidad y encontrar calma en el caos diario.</p>
+                        <p class="philosophy-quote">"El movimiento cura, transforma y libera."</p>
+                    </div>
+                    <div class="philosophy-image-wrapper fade-in delay-2">
+                        <img src="images/foto ambiente.png" alt="Ambiente Casa Atmósfera" class="philosophy-img">
+                        <div class="philosophy-img-label">Conexión profunda</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services (Las Casas) -->
+        <section id="casas" class="section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="label">Nuestras Disciplinas</span>
+                    <h2>Descubre las 3 Casas</h2>
+                    <p class="section-desc">Encuentra la práctica perfecta para tu energía de hoy. Elige tu camino.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card fade-in delay-1">
+                        <div class="card-img-box">
+                            <img src="images/casa control.png" alt="Casa Control">
+                        </div>
+                        <div class="card-content">
+                            <span class="label">Reformer</span>
+                            <h3>Casa Control</h3>
+                            <p>Fuerza, precisión y control absoluto de tu cuerpo usando la máquina reformer de pilates.</p>
+                            <a href="#" class="card-link">Conocer más</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card fade-in delay-2">
+                        <div class="card-img-box">
+                            <img src="images/casa energy.jpg" alt="Casa Energy">
+                        </div>
+                        <div class="card-content">
+                            <span class="label">Athletic / Power</span>
+                            <h3>Casa Energy</h3>
+                            <p>Una clase intensa, dinámica y retadora. Eleva tus pulsaciones y quema energía al máximo.</p>
+                            <a href="#" class="card-link">Conocer más</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card fade-in delay-3">
+                        <div class="card-img-box">
+                            <img src="images/casa balance.jpg" alt="Casa Balance">
+                        </div>
+                        <div class="card-content">
+                            <span class="label">Yoga / Mat / Barre</span>
+                            <h3>Casa Balance</h3>
+                            <p>Reconecta con tu respiración y recupera la movilidad. Flow lento, consciente y restaurativo.</p>
+                            <a href="#" class="card-link">Conocer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contacto" class="footer bg-light fade-in">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-col">
+                        <a href="#" class="brand-logo-container" style="margin-bottom: 1.5rem;">
+                            <img src="iconos y logos/icono ca negro.png" alt="CA Logo" class="brand-icon">
+                            <div class="brand-text">
+                                <span class="brand-name">Casa Atmósfera</span>
+                                <span class="brand-sub">Pilates & Movimiento</span>
+                            </div>
+                        </a>
+                        <p>Tu espacio seguro para transformar cuerpo y mente.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contacto</h4>
+                        <p>hello@casaatmosfera.com</p>
+                        <p>+51 987 654 321</p>
+                        <p>Lima, Perú</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Horarios</h4>
+                        <p>Lunes - Viernes: 6:00am - 9:00pm</p>
+                        <p>Sábados: 7:00am - 2:00pm</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Síguenos</h4>
+                        <div class="social-links">
+                            <a href="#"><i data-feather="instagram"></i></a>
+                            <a href="#"><i data-feather="facebook"></i></a>
+                            <a href="#"><i data-feather="youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Atmósfera Estudio de Pilates y Movimiento. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div> <!-- Fin Main Content Wrapper -->
 
     <script src="script.js"></script>
 </body>
