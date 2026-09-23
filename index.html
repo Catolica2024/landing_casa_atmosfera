@@ -3,231 +3,533 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa Atmósfera - Pilates & Movimiento</title>
-    <meta name="description" content="Estudio premium de Pilates y movimiento. Casa Control, Casa Energy y Casa Balance.">
-    
-    <!-- Google Fonts: Playfair Display, Tenor Sans -->
+    <title>Casa Atmósfera | Pilates & Movimiento en Lima Norte</title>
+    <meta name="description" content="Una experiencia boutique de Pilates, Reformer, Barre, Yoga y Athletic Megareformer en Lima Norte. Máximo 6 personas por clase.">
+    <meta name="keywords" content="pilates lima norte, pilates comas, reformer lima, barre yoga lima, megareformer lima norte, casa atmosfera">
+    <meta property="og:title" content="Casa Atmósfera | Pilates & Movimiento en Lima Norte">
+    <meta property="og:description" content="Tres Casas. Una Experiencia. Pilates, Reformer y Athletic Megareformer en Lima Norte.">
+    <meta property="og:type" content="website">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Tenor+Sans&display=swap" rel="stylesheet">
-    
-    <!-- Feather Icons -->
-    <script src="https://unpkg.com/feather-icons"></script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Tenor+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. Preloader Minimalista -->
-    <div id="preloader">
-        <div class="loader-inner">
-            <img src="iconos y logos/logo ca negro.png" alt="Casa Atmósfera" class="loader-logo">
-        </div>
+<!-- =========================================================
+     PRELOADER (existente — preservado)
+     ========================================================= -->
+<div id="preloader" aria-hidden="true">
+    <div class="loader-inner">
+        <img src="iconos y logos/logo ca negro.png" alt="Casa Atmósfera" class="loader-logo">
     </div>
+</div>
 
-    <!-- 2. Intro Teaser Etéreo -->
-    <section id="intro-screen" class="intro-fullscreen">
-        <video class="intro-video" autoplay loop muted playsinline>
-            <source src="images/videos/presentacion2.mp4" media="(min-width: 768px)">
-            <source src="images/videos/presentacion1.mp4">
-        </video>
-        <div class="intro-overlay"></div>
-        <div class="intro-content">
-            <img src="iconos y logos/logo ca negro.png" alt="Casa Atmósfera" class="intro-logo">
-            <button id="btn-discover" class="btn-outline-intro">Descubrir</button>
+<!-- =========================================================
+     HERO / INTRO (existente — mejorada transición)
+     ========================================================= -->
+<section id="intro-screen" class="intro-fullscreen" aria-label="Bienvenida Casa Atmósfera">
+    <video class="intro-video" autoplay loop muted playsinline poster="images/hero.jpg">
+        <source src="images/videos/presentacion2.mp4" media="(min-width: 768px)" type="video/mp4">
+        <source src="images/videos/presentacion1.mp4" type="video/mp4">
+    </video>
+    <div class="intro-overlay" aria-hidden="true"></div>
+    <div class="intro-content">
+        <img src="iconos y logos/logo ca negro.png" alt="Casa Atmósfera" class="intro-logo">
+        <p class="intro-tagline">Una experiencia boutique de movimiento y bienestar en Lima Norte</p>
+        <button id="btn-discover" class="btn-discover">
+            <span class="btn-discover-text">Descubrir</span>
+        </button>
+    </div>
+    <div class="intro-scroll-hint" aria-hidden="true">
+        <span class="scroll-hint-line"></span>
+    </div>
+</section>
+
+<!-- =========================================================
+     LANDING PAGE — scroll continuo (se revela tras DESCUBRIR)
+     ========================================================= -->
+<div id="landing" class="landing-hidden">
+
+    <!-- ── NAVBAR ── -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" id="nav-logo-link" class="nav-brand" aria-label="Volver al inicio">
+                <img src="iconos y logos/icono ca negro.png" alt="CA" class="nav-logo-icon">
+                <div class="nav-brand-text">
+                    <span class="nav-brand-name">Casa Atmósfera</span>
+                    <span class="nav-brand-sub">Pilates &amp; Movimiento</span>
+                </div>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-links" id="nav-links" role="navigation" aria-label="Navegación principal">
+                <a href="#casas" class="nav-link">Casas</a>
+                <a href="#diferencial" class="nav-link">Experiencia</a>
+                <a href="#formulario" class="nav-link">Contacto</a>
+                <a href="#socias" class="btn-nav-cta">Agenda tu clase</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ─────────────────────────────────────────────────────
+         SECCIÓN 1: LAS TRES CASAS
+         ───────────────────────────────────────────────────── -->
+    <section id="casas" aria-label="Las tres Casas de Casa Atmósfera">
+        <div class="casas-intro">
+            <span class="eyebrow reveal">Tres mundos. Una identidad.</span>
+            <h2 class="casas-main-title reveal">TRES CASAS.<br>UNA EXPERIENCIA.</h2>
+        </div>
+
+        <div class="casas-columns" role="list">
+            <!-- Casa Balance -->
+            <article class="casa-col" data-casa="balance" role="listitem" tabindex="0" aria-label="Explorar Casa Balance">
+                <video class="casa-col-video" autoplay loop muted playsinline poster="images/personal.jpg">
+                    <source src="images/videos/casa_balance.mp4" type="video/mp4">
+                </video>
+                <div class="casa-col-overlay" aria-hidden="true"></div>
+                <div class="casa-col-content">
+                    <div class="casa-col-top">
+                        <span class="casa-col-eyebrow">Pilates Mat · Barre · Yoga</span>
+                    </div>
+                    <div class="casa-col-bottom">
+                        <h3 class="casa-col-name">Casa<br>Balance</h3>
+                        <p class="casa-col-phrase">"Equilibrio, movilidad y conexión."</p>
+                        <button class="btn-explorar" tabindex="-1" aria-hidden="true">Explorar <span>→</span></button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Casa Control -->
+            <article class="casa-col" data-casa="control" role="listitem" tabindex="0" aria-label="Explorar Casa Control">
+                <video class="casa-col-video" autoplay loop muted playsinline poster="images/reformer.jpg">
+                    <source src="images/videos/casa_control.mp4" type="video/mp4">
+                </video>
+                <div class="casa-col-overlay" aria-hidden="true"></div>
+                <div class="casa-col-content">
+                    <div class="casa-col-top">
+                        <span class="casa-col-eyebrow">Pilates Reformer</span>
+                    </div>
+                    <div class="casa-col-bottom">
+                        <h3 class="casa-col-name">Casa<br>Control</h3>
+                        <p class="casa-col-phrase">"Precisión, fuerza y control."</p>
+                        <button class="btn-explorar" tabindex="-1" aria-hidden="true">Explorar <span>→</span></button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Casa Energy -->
+            <article class="casa-col" data-casa="energy" role="listitem" tabindex="0" aria-label="Explorar Casa Energy">
+                <video class="casa-col-video" autoplay loop muted playsinline poster="images/funcional.jpg">
+                    <source src="images/videos/casa_energy.mp4" type="video/mp4">
+                </video>
+                <div class="casa-col-overlay" aria-hidden="true"></div>
+                <div class="casa-col-content">
+                    <div class="casa-col-top">
+                        <span class="casa-col-eyebrow">Athletic Megareformer</span>
+                    </div>
+                    <div class="casa-col-bottom">
+                        <h3 class="casa-col-name">Casa<br>Energy</h3>
+                        <p class="casa-col-phrase">"Fuerza, resistencia e intensidad."</p>
+                        <button class="btn-explorar" tabindex="-1" aria-hidden="true">Explorar <span>→</span></button>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="casas-cta-bar">
+            <a href="#socias" class="btn-primary">Agenda tu primera clase</a>
         </div>
     </section>
 
-    <!-- 3. Selección de las 3 Casas -->
-    <div id="splash-selection" class="splash-fullscreen hidden-initially">
-        <!-- Casa Control -->
-        <div class="casa-option" data-casa="control">
-            <video class="casa-video" autoplay loop muted playsinline>
-                <source src="images/videos/casa_control.mp4">
-            </video>
-            <div class="casa-overlay"></div>
-            <div class="casa-content">
-                <span class="casa-label">Fuerza & Precisión</span>
-                <h2 class="casa-title">Casa Control</h2>
-                <p class="casa-desc">Pilates Reformer</p>
-                <button class="btn-enter">Ingresar</button>
+    <!-- ─────────────────────────────────────────────────────
+         SECCIÓN 2: DIFERENCIAL
+         ───────────────────────────────────────────────────── -->
+    <section id="diferencial" aria-label="Por qué elegir Casa Atmósfera">
+        <div class="section-container">
+            <div class="dif-header">
+                <span class="eyebrow reveal">¿Por qué Casa Atmósfera?</span>
+                <h2 class="reveal">Tres razones.</h2>
+            </div>
+            <div class="dif-grid">
+                <div class="dif-item reveal">
+                    <span class="dif-number" aria-hidden="true">3</span>
+                    <div class="dif-text">
+                        <h3>CASAS EN<br>1 STUDIO</h3>
+                        <p>Pilates Mat, Barre, Yoga, Reformer y Athletic Megareformer bajo un mismo techo.</p>
+                    </div>
+                </div>
+                <div class="dif-separator" aria-hidden="true"></div>
+                <div class="dif-item reveal delay-1">
+                    <span class="dif-number" aria-hidden="true">6</span>
+                    <div class="dif-text">
+                        <h3>MÁXIMO<br>POR CLASE</h3>
+                        <p>Atención cercana y corrección técnica personalizada en cada sesión.</p>
+                    </div>
+                </div>
+                <div class="dif-separator" aria-hidden="true"></div>
+                <div class="dif-item reveal delay-2">
+                    <span class="dif-number" aria-hidden="true">1</span>
+                    <div class="dif-text">
+                        <h3>EXPERIENCIA<br>BOUTIQUE</h3>
+                        <p>Un espacio diseñado para desconectar, moverte y dedicarte tiempo.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <!-- Casa Energy -->
-        <div class="casa-option" data-casa="energy">
-            <video class="casa-video" autoplay loop muted playsinline>
-                <source src="images/videos/casa_energy.mp4">
-            </video>
-            <div class="casa-overlay"></div>
-            <div class="casa-content">
-                <span class="casa-label">Intensidad & Poder</span>
-                <h2 class="casa-title">Casa Energy</h2>
-                <p class="casa-desc">Athletic y Power Pilates</p>
-                <button class="btn-enter">Ingresar</button>
-            </div>
-        </div>
+    </section>
 
-        <!-- Casa Balance -->
-        <div class="casa-option" data-casa="balance">
-            <video class="casa-video" autoplay loop muted playsinline>
-                <source src="images/videos/casa_balance.mp4">
-            </video>
-            <div class="casa-overlay"></div>
-            <div class="casa-content">
-                <span class="casa-label">Conexión & Calma</span>
-                <h2 class="casa-title">Casa Balance</h2>
-                <p class="casa-desc">Yoga, Pilates Mat, Barre</p>
-                <button class="btn-enter">Ingresar</button>
+    <!-- ─────────────────────────────────────────────────────
+         SECCIÓN 3: FITNESS 360°
+         ───────────────────────────────────────────────────── -->
+    <section id="fitness360" aria-label="Fitness 360, una sola experiencia">
+        <div class="section-container">
+            <div class="f360-inner reveal">
+                <div class="f360-text">
+                    <span class="eyebrow-light">Fitness 360°</span>
+                    <h2 class="f360-title">TU MOVIMIENTO.<br>TU RITMO.<br>TU CASA.</h2>
+                    <p class="f360-sub">"Una sola experiencia.<br>Tres formas de moverte."</p>
+                    <a href="#socias" class="btn-light">Descubre tu experiencia</a>
+                </div>
+                <div class="f360-visual" aria-hidden="true">
+                    <div class="f360-ring">
+                        <div class="ring-track"></div>
+                        <div class="ring-dot"></div>
+                        <span class="ring-label r-top">Balance</span>
+                        <span class="ring-label r-bl">Control</span>
+                        <span class="ring-label r-br">Energy</span>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────
+         SECCIÓN 4: PAUSA EMOCIONAL
+         ───────────────────────────────────────────────────── -->
+    <section id="pausa" aria-label="Regálate tu pausa">
+        <div class="pausa-bg" aria-hidden="true">
+            <img src="images/hero.jpg" alt="" class="pausa-img" loading="lazy">
+        </div>
+        <div class="pausa-overlay" aria-hidden="true"></div>
+        <div class="pausa-content reveal">
+            <span class="eyebrow-light">Tu refugio en Lima Norte</span>
+            <h2 class="pausa-title">REGÁLATE<br>TU PAUSA.</h2>
+            <p class="pausa-quote">"Un espacio para desconectar,<br>moverte y dedicarte tiempo."</p>
+        </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────
+         SECCIÓN 5: SOCIAS FUNDADORAS
+         ───────────────────────────────────────────────────── -->
+    <section id="socias" aria-label="Únete a Casa Atmósfera">
+        <div class="section-container">
+            <div class="socias-inner">
+                <div class="socias-left reveal">
+                    <span class="eyebrow-light">Tu momento es ahora</span>
+                    <h2 class="socias-title">VIVE LA<br>EXPERIENCIA<br>ATMÓSFERA.</h2>
+                    <p class="socias-desc">Únete a nuestra comunidad y transforma tu manera de moverte. Reserva tu lugar hoy mismo.</p>
+                </div>
+                <div class="socias-right reveal delay-1">
+                    <div class="socias-card">
+                        <p class="socias-placeholder">Elige la Casa que mejor se adapte a tus objetivos y comienza tu viaje de bienestar con nosotros.</p>
+                        <a href="#formulario" class="btn-primary-light">Agenda tu clase</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────
+         SECCIÓN 6: FORMULARIO
+         ───────────────────────────────────────────────────── -->
+    <section id="formulario" aria-label="Formulario de contacto">
+        <div class="section-container">
+            <div class="form-wrapper">
+                <div class="form-header reveal">
+                    <span class="eyebrow">Contacto</span>
+                    <h2>¿QUIERES SER<br>PARTE?</h2>
+                    <p>Déjanos tus datos y nos pondremos en contacto contigo.</p>
+                </div>
+                <form class="contact-form reveal delay-1" id="contact-form" novalidate aria-label="Formulario de contacto Casa Atmósfera">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="f-nombre">Nombre</label>
+                            <input type="text" id="f-nombre" name="nombre" placeholder="Tu nombre" required autocomplete="given-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="f-whatsapp">WhatsApp</label>
+                            <input type="tel" id="f-whatsapp" name="whatsapp" placeholder="+51 999 999 999" required autocomplete="tel">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="f-email">Correo electrónico</label>
+                            <input type="email" id="f-email" name="email" placeholder="tu@correo.com" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="f-casa">Casa de interés</label>
+                            <select id="f-casa" name="casa" required>
+                                <option value="" disabled selected>Elige una Casa</option>
+                                <option value="balance">Casa Balance</option>
+                                <option value="control">Casa Control</option>
+                                <option value="energy">Casa Energy</option>
+                                <option value="todas">Las tres Casas</option>
+                                <option value="no-se">Aún no lo sé</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-full">
+                        <label for="f-mensaje">¿Qué estás buscando? <span class="label-opt">(opcional)</span></label>
+                        <textarea id="f-mensaje" name="mensaje" placeholder="Cuéntanos..." rows="3"></textarea>
+                    </div>
+                    <div class="form-submit-row">
+                        <button type="submit" class="btn-form-submit" id="form-submit-btn">Quiero más información</button>
+                    </div>
+                </form>
+                <div class="form-success" id="form-success" aria-live="polite" hidden>
+                    <span class="success-icon" aria-hidden="true">✦</span>
+                    <h3>¡Gracias!</h3>
+                    <p>Nos pondremos en contacto contigo pronto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────
+         SECCIÓN 7: REDES SOCIALES
+         ───────────────────────────────────────────────────── -->
+    <section id="redes" aria-label="Redes sociales de Casa Atmósfera">
+        <div class="section-container">
+            <div class="redes-inner reveal">
+                <span class="eyebrow">Sigue la experiencia</span>
+                <h2 class="redes-title">CASA ATMÓSFERA<br>EN REDES.</h2>
+                <div class="redes-list" role="list">
+                    <a href="https://www.instagram.com/casa_atmosfera_movimiento" target="_blank" rel="noopener noreferrer" class="red-item" role="listitem" aria-label="Instagram @casa_atmosfera_movimiento">
+                        <div class="red-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </div>
+                        <div class="red-info">
+                            <span class="red-platform">Instagram</span>
+                            <span class="red-handle">@casa_atmosfera_movimiento</span>
+                        </div>
+                        <span class="red-arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@casaatmosfera" target="_blank" rel="noopener noreferrer" class="red-item" role="listitem" aria-label="TikTok @casaatmosfera">
+                        <div class="red-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.83 1.55V6.79a4.86 4.86 0 0 1-1.06-.1z"/></svg>
+                        </div>
+                        <div class="red-info">
+                            <span class="red-platform">TikTok</span>
+                            <span class="red-handle">@casaatmosfera</span>
+                        </div>
+                        <span class="red-arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="#" class="red-item" role="listitem" aria-label="Facebook Casa Atmosfera Pilates y Movimiento">
+                        <div class="red-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </div>
+                        <div class="red-info">
+                            <span class="red-platform">Facebook</span>
+                            <span class="red-handle">Casa Atmosfera Pilates &amp; Movimiento</span>
+                        </div>
+                        <span class="red-arrow" aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────
+         SECCIÓN 8: UBICACIÓN
+         ───────────────────────────────────────────────────── -->
+    <section id="ubicacion" aria-label="Ubicación de Casa Atmósfera">
+        <div class="ubicacion-grid">
+            <div class="ubicacion-info reveal">
+                <span class="eyebrow">Encuéntranos</span>
+                <h2>Casa<br>Atmósfera</h2>
+                <address>
+                    <p>Av. Micaela Bastidas 875</p>
+                    <p>Urbanización El Retablo</p>
+                    <p>Comas, Lima</p>
+                </address>
+                <a href="https://www.google.com/maps/search/Av.+Micaela+Bastidas+875+El+Retablo+Comas+Lima" target="_blank" rel="noopener noreferrer" class="btn-maps">
+                    Cómo llegar →
+                </a>
+            </div>
+            <div class="ubicacion-map">
+                <iframe
+                    title="Mapa ubicación Casa Atmósfera en Comas, Lima"
+                    src="https://maps.google.com/maps?q=Av.+Micaela+Bastidas+875,+El+Retablo,+Comas,+Lima&output=embed&hl=es&z=16"
+                    width="100%" height="100%"
+                    style="border:0;" allowfullscreen loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" id="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="iconos y logos/logo ca negro.png" alt="Casa Atmósfera" class="footer-logo">
+                <p class="footer-tagline">Pilates &amp; Movimiento · Lima Norte</p>
+            </div>
+            <nav class="footer-nav" aria-label="Navegación del pie de página">
+                <a href="#casas">Casas</a>
+                <a href="#diferencial">Experiencia</a>
+                <a href="#formulario">Contacto</a>
+                <a href="https://www.instagram.com/casa_atmosfera_movimiento" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.tiktok.com/@casaatmosfera" target="_blank" rel="noopener noreferrer">TikTok</a>
+                <a href="#">Facebook</a>
+            </nav>
+            <div class="footer-cta-col">
+                <a href="#socias" class="btn-footer-cta">Agenda tu clase</a>
+                <p class="footer-location">Comas, Lima Norte · Perú</p>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>© 2026 Casa Atmósfera. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</div><!-- /landing -->
+
+<!-- =========================================================
+     OVERLAYS DE CASA (fullscreen — fuera del scroll)
+     ========================================================= -->
+
+<!-- Overlay: Casa Balance -->
+<div id="overlay-balance" class="casa-overlay" role="dialog" aria-modal="true" aria-label="Casa Balance" hidden>
+    <video class="ov-video" loop muted playsinline poster="images/personal.jpg">
+        <source src="images/videos/casa_balance.mp4" type="video/mp4">
+    </video>
+    <div class="ov-gradient" aria-hidden="true"></div>
+    <button class="ov-close" data-overlay="overlay-balance" aria-label="Cerrar Casa Balance">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </button>
+    <div class="ov-content">
+        <div class="ov-header">
+            <span class="ov-eyebrow">Pilates Mat · Barre · Yoga</span>
+            <h2 class="ov-title">Casa<br>Balance</h2>
+            <p class="ov-phrase">"Equilibrio, movilidad y conexión."</p>
+        </div>
+        <div class="ov-pillars" aria-label="Disciplinas de Casa Balance">
+            <div class="ov-pillar">
+                <span class="pillar-name">Pilates Mat</span>
+                <span class="pillar-desc">Conciencia corporal.</span>
+            </div>
+            <div class="ov-pillar">
+                <span class="pillar-name">Barre</span>
+                <span class="pillar-desc">Fuerza y tono.</span>
+            </div>
+            <div class="ov-pillar">
+                <span class="pillar-name">Yoga</span>
+                <span class="pillar-desc">Movilidad y equilibrio.</span>
+            </div>
+        </div>
+        <div class="ov-max6">
+            <span class="ov-max6-num" aria-label="Máximo 6 personas">6</span>
+            <span class="ov-max6-label">Máximo personas por clase.<br>Una experiencia cercana y personalizada.</span>
+        </div>
+        <div class="ov-cta">
+            <a href="#formulario" class="btn-ov-cta ov-close-trigger" data-overlay="overlay-balance">Quiero conocer Casa Balance</a>
         </div>
     </div>
+</div>
 
-    <!-- 4. Contenido Principal -->
-    <div id="main-content" class="hidden-initially">
-        
-        <!-- Navbar Glassmorphism -->
-        <header class="navbar">
-            <div class="container nav-content">
-                <a href="#" class="brand-logo-container">
-                    <img src="iconos y logos/icono ca negro.png" alt="CA Logo" class="brand-icon">
-                    <div class="brand-text">
-                        <span class="brand-name">Casa Atmósfera</span>
-                        <span class="brand-sub">Pilates & Movimiento</span>
-                    </div>
-                </a>
-                <nav class="nav-links">
-                    <a href="#filosofia">Filosofía</a>
-                    <a href="#casas">Las Casas</a>
-                    <a href="#comunidad">Comunidad</a>
-                    <a href="#contacto" class="btn-nav-cta">Reserva clase</a>
-                </nav>
+<!-- Overlay: Casa Control -->
+<div id="overlay-control" class="casa-overlay" role="dialog" aria-modal="true" aria-label="Casa Control" hidden>
+    <video class="ov-video" loop muted playsinline poster="images/reformer.jpg">
+        <source src="images/videos/casa_control.mp4" type="video/mp4">
+    </video>
+    <div class="ov-gradient" aria-hidden="true"></div>
+    <button class="ov-close" data-overlay="overlay-control" aria-label="Cerrar Casa Control">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </button>
+    <div class="ov-content">
+        <div class="ov-header">
+            <span class="ov-eyebrow">Pilates Reformer</span>
+            <h2 class="ov-title">Casa<br>Control</h2>
+            <p class="ov-phrase">"Precisión, fuerza y control."</p>
+        </div>
+        <div class="ov-pillars" aria-label="Pilares de Casa Control">
+            <div class="ov-pillar">
+                <span class="pillar-name">Alineación</span>
+                <span class="pillar-desc">Postura y conciencia.</span>
             </div>
-        </header>
-
-        <!-- Hero Section -->
-        <section class="hero fade-in">
-            <div class="container">
-                <div class="hero-content">
-                    <span class="hero-badge">Tu espacio de transformación</span>
-                    <h1>Eleva tu <em>cuerpo</em> y conecta con tu <em>centro</em>.</h1>
-                    <p>Una experiencia de movimiento diseñada para desafiarte, restaurarte y devolverte al equilibrio perfecto.</p>
-                    <div class="hero-actions">
-                        <a href="#casas" class="btn-primary">Ver clases</a>
-                    </div>
-                </div>
+            <div class="ov-pillar">
+                <span class="pillar-name">Fuerza</span>
+                <span class="pillar-desc">Profunda y progresiva.</span>
             </div>
-        </section>
-
-        <!-- Philosophy Section -->
-        <section id="filosofia" class="section bg-light">
-            <div class="container">
-                <div class="philosophy-grid fade-in delay-1">
-                    <div class="philosophy-text">
-                        <span class="label">Nuestra Filosofía</span>
-                        <h2>Más que un estudio, una <em>atmósfera</em> de bienestar.</h2>
-                        <p>Creemos en el movimiento consciente como la herramienta principal para la transformación personal. En Casa Atmósfera, cada clase está diseñada para ayudarte a construir fuerza profunda, mejorar tu flexibilidad y encontrar calma en el caos diario.</p>
-                        <p class="philosophy-quote">"El movimiento cura, transforma y libera."</p>
-                    </div>
-                    <div class="philosophy-image-wrapper fade-in delay-2">
-                        <img src="images/foto ambiente.png" alt="Ambiente Casa Atmósfera" class="philosophy-img">
-                        <div class="philosophy-img-label">Conexión profunda</div>
-                    </div>
-                </div>
+            <div class="ov-pillar">
+                <span class="pillar-name">Control</span>
+                <span class="pillar-desc">Cada movimiento importa.</span>
             </div>
-        </section>
+        </div>
+        <div class="ov-max6">
+            <span class="ov-max6-num" aria-label="Máximo 6 personas">6</span>
+            <span class="ov-max6-label">Máximo personas por clase.<br>Atención cercana y corrección técnica personalizada.</span>
+        </div>
+        <div class="ov-cta">
+            <a href="#formulario" class="btn-ov-cta ov-close-trigger" data-overlay="overlay-control">Quiero conocer Casa Control</a>
+        </div>
+    </div>
+</div>
 
-        <!-- Services (Las Casas) -->
-        <section id="casas" class="section">
-            <div class="container">
-                <div class="section-header fade-in">
-                    <span class="label">Nuestras Disciplinas</span>
-                    <h2>Descubre las 3 Casas</h2>
-                    <p class="section-desc">Encuentra la práctica perfecta para tu energía de hoy. Elige tu camino.</p>
-                </div>
-                
-                <div class="services-grid">
-                    <div class="service-card fade-in delay-1">
-                        <div class="card-img-box">
-                            <img src="images/casa control.png" alt="Casa Control">
-                        </div>
-                        <div class="card-content">
-                            <span class="label">Reformer</span>
-                            <h3>Casa Control</h3>
-                            <p>Fuerza, precisión y control absoluto de tu cuerpo usando la máquina reformer de pilates.</p>
-                            <a href="#" class="card-link">Conocer más</a>
-                        </div>
-                    </div>
-                    
-                    <div class="service-card fade-in delay-2">
-                        <div class="card-img-box">
-                            <img src="images/casa energy.jpg" alt="Casa Energy">
-                        </div>
-                        <div class="card-content">
-                            <span class="label">Athletic / Power</span>
-                            <h3>Casa Energy</h3>
-                            <p>Una clase intensa, dinámica y retadora. Eleva tus pulsaciones y quema energía al máximo.</p>
-                            <a href="#" class="card-link">Conocer más</a>
-                        </div>
-                    </div>
-
-                    <div class="service-card fade-in delay-3">
-                        <div class="card-img-box">
-                            <img src="images/casa balance.jpg" alt="Casa Balance">
-                        </div>
-                        <div class="card-content">
-                            <span class="label">Yoga / Mat / Barre</span>
-                            <h3>Casa Balance</h3>
-                            <p>Reconecta con tu respiración y recupera la movilidad. Flow lento, consciente y restaurativo.</p>
-                            <a href="#" class="card-link">Conocer más</a>
-                        </div>
-                    </div>
-                </div>
+<!-- Overlay: Casa Energy -->
+<div id="overlay-energy" class="casa-overlay" role="dialog" aria-modal="true" aria-label="Casa Energy" hidden>
+    <video class="ov-video" loop muted playsinline poster="images/funcional.jpg">
+        <source src="images/videos/casa_energy.mp4" type="video/mp4">
+    </video>
+    <div class="ov-gradient" aria-hidden="true"></div>
+    <button class="ov-close" data-overlay="overlay-energy" aria-label="Cerrar Casa Energy">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </button>
+    <div class="ov-content">
+        <div class="ov-header">
+            <span class="ov-eyebrow">Athletic Megareformer</span>
+            <h2 class="ov-title">Casa<br>Energy</h2>
+            <p class="ov-phrase">"Fuerza, resistencia e intensidad."</p>
+        </div>
+        <div class="ov-pillars" aria-label="Pilares de Casa Energy">
+            <div class="ov-pillar">
+                <span class="pillar-name">Fuerza</span>
+                <span class="pillar-desc">Atlética y progresiva.</span>
             </div>
-        </section>
-
-        <!-- Footer -->
-        <footer id="contacto" class="footer bg-light fade-in">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-col">
-                        <a href="#" class="brand-logo-container" style="margin-bottom: 1.5rem;">
-                            <img src="iconos y logos/icono ca negro.png" alt="CA Logo" class="brand-icon">
-                            <div class="brand-text">
-                                <span class="brand-name">Casa Atmósfera</span>
-                                <span class="brand-sub">Pilates & Movimiento</span>
-                            </div>
-                        </a>
-                        <p>Tu espacio seguro para transformar cuerpo y mente.</p>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Contacto</h4>
-                        <p>hello@casaatmosfera.com</p>
-                        <p>+51 987 654 321</p>
-                        <p>Lima, Perú</p>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Horarios</h4>
-                        <p>Lunes - Viernes: 6:00am - 9:00pm</p>
-                        <p>Sábados: 7:00am - 2:00pm</p>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Síguenos</h4>
-                        <div class="social-links">
-                            <a href="#"><i data-feather="instagram"></i></a>
-                            <a href="#"><i data-feather="facebook"></i></a>
-                            <a href="#"><i data-feather="youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2026 Atmósfera Estudio de Pilates y Movimiento. Todos los derechos reservados.</p>
-                </div>
+            <div class="ov-pillar">
+                <span class="pillar-name">Resistencia</span>
+                <span class="pillar-desc">Cardiovascular y funcional.</span>
             </div>
-        </footer>
+            <div class="ov-pillar">
+                <span class="pillar-name">Intensidad</span>
+                <span class="pillar-desc">Boutique y controlada.</span>
+            </div>
+        </div>
+        <div class="ov-max6">
+            <span class="ov-max6-num" aria-label="Máximo 6 personas">6</span>
+            <span class="ov-max6-label">Máximo personas por clase.<br>Intensidad con atención personalizada.</span>
+        </div>
+        <div class="ov-cta">
+            <a href="#formulario" class="btn-ov-cta ov-close-trigger" data-overlay="overlay-energy">Quiero conocer Casa Energy</a>
+        </div>
+    </div>
+</div>
 
-    </div> <!-- Fin Main Content Wrapper -->
+<!-- =========================================================
+     FLOATING WHATSAPP
+     ========================================================= -->
+<a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contáctanos por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+    </svg>
+</a>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
