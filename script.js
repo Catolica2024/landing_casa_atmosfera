@@ -242,14 +242,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const btnSubmit = document.getElementById('form-submit-btn');
             const originalText = btnSubmit.textContent;
-            btnSubmit.textContent = 'Enviando...';
+            
+            // Premium Loading state
+            btnSubmit.innerHTML = '<span class="spinner" style="display:inline-block; width:15px; height:15px; border:2px solid rgba(229,219,209,0.3); border-radius:50%; border-top-color:#E5DBD1; animation:spin 1s ease-in-out infinite; margin-right:8px; vertical-align:middle;"></span> Enviando...';
             btnSubmit.style.opacity = '0.7';
             btnSubmit.disabled = true;
+            
+            // Inject spin keyframes if not exists
+            if (!document.getElementById('spin-keyframes')) {
+                const style = document.createElement('style');
+                style.id = 'spin-keyframes';
+                style.innerHTML = '@keyframes spin { to { transform: rotate(360deg); } }';
+                document.head.appendChild(style);
+            }
 
-            setTimeout(() => {
+            const payload = {
+                nombre: nombre,
+                whatsapp: whatsapp,
+                email: email,
+                casa: casa,
+                mensaje: document.getElementById('f-mensaje').value
+            };
+
+            fetch('send_email.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.json())
+            .then(data => {
                 contactForm.style.display = 'none';
+                
+                // Premium Success Message
+                formSuccess.innerHTML = `
+                    <div style="display:flex; flex-direction:column; align-items:center; text-align:center; animation: introReveal 0.8s ease-out;">
+                        <div style="width:60px; height:60px; border-radius:50%; background:#32332D; color:#E5DBD1; display:flex; justify-content:center; align-items:center; font-size:24px; margin-bottom:20px;">✓</div>
+                        <h3 style="font-family:var(--serif); font-size:2rem; color:#32332D; margin-bottom:10px;">¡Gracias, ${nombre}!</h3>
+                        <p style="color:#858D8F; font-size:1rem; max-width:90%; margin:0 auto;">Hemos recibido tu solicitud con éxito. Nos pondremos en contacto contigo pronto para brindarte toda la información.</p>
+                    </div>
+                `;
                 formSuccess.hidden = false;
-            }, 1000);
+            })
+            .catch(err => {
+                console.error(err);
+                btnSubmit.innerHTML = originalText;
+                btnSubmit.style.opacity = '1';
+                btnSubmit.disabled = false;
+                alert('Hubo un problema al enviar el mensaje. Inténtalo de nuevo.');
+            });
         });
     }
 
