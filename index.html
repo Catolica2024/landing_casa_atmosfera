@@ -45,7 +45,7 @@
         <div class="intro-overlay" aria-hidden="true"></div>
         <div class="intro-content">
             <img src="iconos y logos/logo ca negro.png" alt="Casa Atmósfera" class="intro-logo">
-            <p class="intro-tagline">Un espacio boutique donde las disciplinas no compiten, se potencian.</p>
+            <p class="intro-tagline">Una casa, tres formas de moverte , una misma atmósfera</p>
             <button id="btn-discover" class="btn-discover">
                 <span class="btn-discover-text">Descubrir</span>
             </button>
@@ -158,6 +158,16 @@
                 <a href="#socias" class="btn-primary">Agenda tu primera clase</a>
             </div>
         </section>
+
+        <style>
+            /* Fix para ocultar bordes negros quemados en los videos */
+            .casa-col-video {
+                transform: scale(1.05); /* Escala ligeramente el video para ocultar barras negras */
+            }
+            .casa-col:hover .casa-col-video {
+                transform: scale(1.1); /* Ajusta el hover para que coincida */
+            }
+        </style>
 
         <!-- ─────────────────────────────────────────────────────
          SECCIÓN 2: DIFERENCIAL
@@ -620,6 +630,160 @@
             <div class="ov-cta">
                 <a href="#formulario" class="btn-ov-cta ov-close-trigger" data-overlay="overlay-energy">Quiero conocer
                     Casa Energy</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================
+     POPUP SOCIA FUNDADORA
+     ========================================================= -->
+    <style>
+        #popup-fundadora-wrapper {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        #popup-fundadora-wrapper.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .pop-backdrop {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(3px);
+        }
+        .pop-modal {
+            position: relative;
+            width: 90%;
+            max-width: 380px;
+            background-color: var(--bg-light, #E5DBD1);
+            background-image: url('images/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            transform: translateY(20px) scale(0.95);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #popup-fundadora-wrapper.open .pop-modal {
+            transform: translateY(0) scale(1);
+        }
+        .pop-modal-inner {
+            background: rgba(229,219,209, 0.92); /* Subtle beige tint over the image */
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+        .pop-close {
+            position: absolute;
+            top: 15px; right: 15px;
+            background: none; border: none;
+            font-size: 1.5rem; color: #32332D;
+            cursor: pointer; z-index: 10;
+            transition: transform 0.3s;
+        }
+        .pop-close:hover {
+            transform: rotate(90deg);
+        }
+        .pop-eyebrow {
+            display: block;
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #1B3B36;
+            margin-bottom: 0.5rem;
+        }
+        .pop-title {
+            font-family: var(--serif);
+            font-size: 2rem;
+            color: #32332D;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+        .pop-desc {
+            font-family: var(--sans);
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        .pop-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .pop-input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid rgba(50, 51, 45, 0.2);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.8);
+            font-family: var(--sans);
+            font-size: 0.9rem;
+            color: #32332D;
+            transition: border-color 0.3s, background 0.3s;
+            box-sizing: border-box;
+        }
+        .pop-input:focus {
+            outline: none;
+            border-color: #32332D;
+            background: #fff;
+        }
+        .pop-btn {
+            background: #32332D;
+            color: #E5DBD1;
+            border: none;
+            padding: 0.9rem;
+            border-radius: 6px;
+            font-family: var(--sans);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 0.5rem;
+        }
+        .pop-btn:hover {
+            background: #1B3B36;
+        }
+        .pop-success-msg {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            animation: popFadeIn 0.5s ease forwards;
+        }
+        @keyframes popFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+    <div id="popup-fundadora-wrapper" aria-modal="true" aria-label="Socia Fundadora" hidden>
+        <div class="pop-backdrop" id="pop-backdrop"></div>
+        <div class="pop-modal">
+            <button class="pop-close" id="pop-close" aria-label="Cerrar">&times;</button>
+            <div class="pop-modal-inner">
+                <span class="pop-eyebrow">Exclusivo</span>
+                <h2 class="pop-title">SÉ UNA SOCIA<br>FUNDADORA</h2>
+                <p class="pop-desc">Únete a nuestra comunidad desde el principio y obtén beneficios exclusivos.</p>
+                
+                <form id="popup-form" class="pop-form">
+                    <input type="text" id="pop-nombre" class="pop-input" placeholder="Nombre completo" required>
+                    <input type="email" id="pop-email" class="pop-input" placeholder="Correo electrónico" required>
+                    <input type="tel" id="pop-whatsapp" class="pop-input" placeholder="WhatsApp" required>
+                    <button type="submit" id="pop-submit-btn" class="pop-btn">Enviar Datos</button>
+                </form>
+                
+                <div id="pop-success" hidden style="margin-top: 1rem;"></div>
             </div>
         </div>
     </div>
